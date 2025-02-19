@@ -8,7 +8,12 @@
     <script defer src="script.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
+    <meta name="description" content="EraTech des solutions informatiques sur mesure">
+    <meta name="keywords" content="reseaux, informatique, eratech, solutions">
+    <meta name="author" content="EraTech">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-eratech.png">
+
     
 </head>
 <body>
@@ -246,13 +251,12 @@
             
             
         <div class="services-container" style="margin: bottom 40px;">
-            <div class="service-item">
-                <img src="https://www.inceptionnet.com/wp-content/uploads/2020/07/network-cabling-services.webp" alt="Réseau informatique">
-                <h3>Réseau informatique</h3>
-                <p>Installation et gestion de réseaux informatiques pour assurer une connectivité optimale et sécurisée.</p>
-                <a href="net01.html" class="more-info">En savoir plus</a>
+            <div class="service-item" onclick="window.location.href='net01.html';" style="cursor: pointer;">
+                    <img src="https://www.inceptionnet.com/wp-content/uploads/2020/07/network-cabling-services.webp" alt="Réseau informatique">
+                    <h3>Réseau informatique</h3>
+                    <p>Installation et gestion de réseaux informatiques pour assurer une connectivité optimale et sécurisée.</p>
+                    <a href="net01.html" class="more-info">En savoir plus</a>
             </div>
-           
             <div class="service-item">
                 <img src="https://www.openmindt.com/wp-content/uploads/2023/11/how-to-choose-your-programming-language-for-your-software.jpg" alt="Conception de sites web">
                 <h3>Conception de sites web</h3>
@@ -454,7 +458,91 @@
         // Démarrer le cycle toutes les 5 secondes
         setInterval(changerTemoignage, 5000);
     </script>
-    
+
+    <style>
+        .faq-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #B60B11;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '\25BC'; /* Symbole flèche vers le bas */
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, padding 0.3s ease-in-out;
+            padding: 0 15px;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 10px 15px;
+        }
+    </style>
+
+    <section class="faq-section">
+        <h2 class="faq-title">FAQ EraTech</h2>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            <div class="faq-question">1. Quels services propose Eratech ?</div>
+            <div class="faq-answer">Eratech offre des services en développement logiciel, conception de produits électroniques et support IT.</div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            <div class="faq-question">2. Travaillez-vous avec des entreprises de toutes tailles ?</div>
+            <div class="faq-answer">Oui, nous accompagnons aussi bien les startups que les grandes entreprises.</div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            <div class="faq-question">3. Proposez-vous des solutions sur mesure ?</div>
+            <div class="faq-answer">Oui, nous concevons des solutions adaptées aux besoins spécifiques de nos clients.</div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            <div class="faq-question">4. Quelle est votre approche en matière de sécurité informatique ?</div>
+            <div class="faq-answer">Nous suivons des standards élevés pour garantir la protection des données et des systèmes.</div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            <div class="faq-question">5. Offrez-vous un support technique ?</div>
+            <div class="faq-answer">Oui, nous proposons un support technique réactif pour nos clients.</div>
+        </div>
+    </section>
+
+    <script>
+        function toggleAnswer(element) {
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                }
+            });
+            element.classList.toggle('active');
+        }
+    </script>
+
 
     <section id="footer">
         <div class="footer-container">
